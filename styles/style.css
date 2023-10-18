@@ -1,0 +1,98 @@
+/* The styling sheet for freedom Card! */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poly&display=swap');
+
+
+:root {
+    --background-red: #332C2B;
+    --bright-red: #ED3726;
+    --normal-red: #BA4D43;
+    --dark-red: #87514C;
+    --darkest-red: #544240
+
+}
+
+/* Media Styling */
+@media only screen and (max-width: 580px) {
+    #freedom-eagle-logo {
+        max-width: 250px;
+    }
+    
+    #section-freedom-home {
+        margin-top:0px !important;
+        text-align: center;
+    }
+
+    #home-phone {
+        margin-top: 20px;
+    }  
+
+    #freedom-card {
+        display: none;
+    }
+}
+
+
+/* Body Styling */
+body {
+    background-color: var(--background-red) ;
+    font-family: 'Poly', serif;
+}
+
+/* Navbar Styling */  
+#freedom-eagle-logo {
+    max-width: 300px;
+    max-height: auto;
+}
+
+#navbarUnderline a {
+    text-decoration: none;
+    color: var(--normal-red);
+}
+
+#nav-freedom-container {
+    max-height: 155px;
+}
+    
+/* Home Section */
+#section-freedom-home {
+    margin-top: 50px;
+    color: white;
+}
+
+
+#home-desc-container p {
+    font-size: 120%;
+    color: lightgrey;
+}
+
+#home-slogan {
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 30px;
+
+}
+
+#freedom-card {
+    border: 5px solid var(--dark-red);
+}
+
+#home-button {
+    border: 0px;
+    padding: 15px 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-family: inherit;
+    color: white;
+    background-color: var(--bright-red);
+}
+
+#home-button:hover {
+    background: white;
+    color: var(--bright-red);
+    transition: .5s;
+}
+
+
+

@@ -1,0 +1,28 @@
+nav class="navbar navbar-expand-sm bg-body-tertiary" id="freedom-navbar">
+    <div class="container mb" style="height: 50px;">
+      <a class="navbar-brand" href="#">
+        <img id="freedom-eagle-logo" src="./styles/imgs/freedom-eagle.png" alt="Freedom Eagle">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUnderline" aria-controls="navbarUnderline" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Nav Items -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarUnderline">
+        <ul class="nav nav-underline">
+          <li class="nav-item">
+            <a class="nav-link active" id="nav-freedom-home" href="#scrollspyHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-freedom-login" href="#scrollspyLogin">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar Content -->
+  <div data-bs-spy="scroll" data-bs-target="#freedom-navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    <h4 id="scrollspyHome">First heading</h4>
+    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+    <h4 id="scrollspyLogin">Second heading</h4>
+    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+  </div>
