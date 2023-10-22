@@ -66,38 +66,45 @@
         <div class="col-xl-4">
           <img  class="img-fluid" src="./styles/imgs/freedom-sam.png" alt="Uncle Sammy" data-aos="zoom-in">
         </div>
-        <div id="signup-container" class="col-xl-8" data-aos="fade-left">
+        <div id="registration-container" class="col-xl-8" data-aos="fade-left">
           <h1 class="freedom-title">Register for a <span style="color: var(--navy);">Freedom Account</span></h1>
           <!-- Sign Up Form -->
-          <form class="needs-validation" novalidate>
+          <form id="registration-form" class="needs-validation row g-2" novalidate>
             <!-- Name -->
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="freedomName" required>            
+            <div class="form-floating mb-3 col-md-9">
+              <input type="text" class="form-control" id="freedomName" name="full_name" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
               <label for="freedomName">Full Legal Name</label>
               <div class="invalid-feedback">
                 Please enter your full legal name
               </div>
             </div>
+            <div class="form-floating mb-3 col-md-3">
+              <input type="date" class="form-control" id="freedomDate" min="2023-01-01" max="2023-12-31" name="signup_date" required>            
+              <label for="freedomDate">Date</label>
+              <div class="invalid-feedback">
+                Please give a valid date
+              </div>
+            </div>
             <!-- SSN -->
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 col-md-3">
               <input type="password" class="form-control" id="freedomSSN" pattern="[0-9]{9}" aria-describedby="ssnHelp" required>
-              <label for="freedomName">SSN</label>
+              <label for="freedomSSN">SSN</label>
               <div id="ssnHelp" class="form-text">Only visible by you (xxxxxxxxx)</div>
               <div class="invalid-feedback">
                 Please enter a valid SSN
               </div>
             </div>
             <!-- Address -->
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="freedomAddress" required>
-              <label for="freedomName">Address</label>
+            <div class="form-floating mb-3 col-md-9">
+              <input type="text" class="form-control" id="freedomAddress" pattern="^\d+\s\w+\s\w+\s?\w+" required>
+              <label for="freedomAddress">Address</label>
               <div class="invalid-feedback">
                 Please enter a valid street address
               </div>
             </div>
             <!-- Email -->
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="freedomEmail" aria-describedby="emailHelp" required>
+            <div class="form-floating mb-3 col-md-8">
+              <input type="email" class="form-control" id="freedomEmail" aria-describedby="emailHelp" name="email_address" required>
               <label for="freedomEmail">Email address</label>
               <div id="emailHelp" class="form-text">Used to recieve updates and verification</div>
               <div class="invalid-feedback">
@@ -105,33 +112,55 @@
               </div>
             </div>
             <!-- Mobile -->
-            <div class="form-floating mb-3">
-              <input type="tel" class="form-control" id="freedomMobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="mobileHelp" required>
-              <label for="freedomName">Mobile</label>
+            <div class="form-floating mb-3 col-md-4">
+              <input type="tel" class="form-control" id="freedomMobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="mobileHelp" name="mobile" required>
+              <label for="freedomMobile">Mobile</label>
               <div id="mobileHelp" class="form-text">Used to recieve updates and verification (xxx-xxx-xxxx)</div>
               <div class="invalid-feedback">
                 Please enter a valid phone number
               </div>
             </div>
             <!-- Password -->
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="freedomPassword" required>
+            <div class="form-floating mb-3 col-md-6">
+              <input type="password" class="form-control" id="freedomPassword" pattern="[\s\S]{8,20}" required>
               <label for="freedomPassword">Password</label>
               <div class="invalid-feedback">
-                Please enter password
+                Please enter a valid password
               </div>
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                  Must be 8-20 characters long.
+                </span>
+              </div>
+            
             </div>
             <!-- Password Verify -->
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="freedomPasswordVerify" required>
-              <label for="freedomPassword">Verify Password</label>
-              <div class="invalid-feedback">
-                Please confirm password
+            <div class="form-floating mb-3 col-md-6">
+              <input type="password" oninput="passwordVerify(this.value)" class="form-control" id="freedomPasswordVerify" required>
+              <label for="freedomPasswordVerify">Verify Password</label>
+              <div id="confirm-password" class="invalid-feedback">
+                Passwords do not match
               </div>
             </div>
-            <!-- Submission -->
-            <button type="submit" id="signup-button"><span>Register</span></button>
-            <p id="signup-confirmation" class="mt-3"></p>
+            <!-- Agreement-->
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                  I agree to the <a href="https://youtu.be/3zWu_w-l6s0?si=5bmgJ9Wx-W_z-517" target="_blank">Terms and Conditions</a> for having a <span style="color: var(--navy);">Freedom Account</span>
+                </label>
+                <div class="invalid-feedback">
+                  You must agree to the Terms and Conditions
+                </div>
+              </div>
+            </div>
+            <!-- Submission --> 
+            <div class="col-md-4 d-grid">
+              <button type="submit" id="signup-button" class="submission-button">Register</button>
+            </div>
+            <div class="col-md-4 d-grid">
+              <button id="reset-button" type="reset" class="submission-button">Clear</button>
+            </div>
           </form>
         </div>
       </div>
@@ -146,6 +175,17 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>AOS.init();</script>
-  <script  src="./scripts/script.js"></script>  
+  <script  src="./scripts/script.js"></script>
+  <!-- Password Verify Internal Script -->
+  <script>
+    let passwordVerify = (password) => {
+      let enteredPasswordElement = document.getElementById("freedomPassword");
+      let enteredPassword = enteredPasswordElement.value;
+      let passVerifyElement = document.getElementById("freedomPasswordVerify");
+      let verifyMessage = document.getElementById("verify-message")
+      enteredPassword != password ? passVerifyElement.classList.add("is-invalid") : passVerifyElement.classList.remove("is-invalid");
+      
+    };
+  </script>  
 </body>
 </html>

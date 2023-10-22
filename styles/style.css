@@ -27,7 +27,7 @@
 
     #freedom-card {display: none;}
 
-    #signup-container {margin-top: 20px;}
+    #registration-container {margin-top: 20px;}
 }
 
 
@@ -84,13 +84,14 @@ body {
 
 #section-freedom-signup {
     background-color: var(--dark-red);
-    #signup-container {
+    #registration-container {
         color: var(--black);
         background-color: white;
         border: 1px white solid;
         border-radius: 10px;
     };
-    #signup-button {
+    .submission-button {
+        margin-top: 15px;
         border: 1px var(--navy) solid; 
         background-color: var(--navy); 
         padding: 10px 20px; 
