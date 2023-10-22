@@ -15,7 +15,7 @@
 
 /* Media Styling */
 @media only screen and (max-width: 580px) {
-    #freedom-eagle-logo {max-width: 250px;}
+    #freedom-eagle-logo {width: 200px;}
     
     #section-freedom-home {
         margin-top:0px !important;
