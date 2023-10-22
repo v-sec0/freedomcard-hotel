@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // Making sure the DOC is fully loaded
     console.log("Ready to rumble.");
-    console.log();
+    console.log("Placeholder");
 
     (() => {
         'use strict'
