@@ -14,7 +14,7 @@
 <body>
   
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm bg-light sticky-top"  >
+  <nav class="navbar navbar-expand-sm bg-white sticky-top" data-aos="fade-down" style="overflow-x: hidden;">
     <div id="nav-freedom-container" class="container mb">
       <a class="navbar-brand" href="#">
         <img id="freedom-eagle-logo" src="./styles/imgs/freedom-eagle.png" alt="Freedom Eagle">
@@ -23,13 +23,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Nav Items -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarUnderline" role="tablist">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarUnderline">
         <ul class="nav nav-underline">
           <li class="nav-item">
-            <a class="nav-link active" id="nav-freedom-home" aria-selected="true">Home</a>
+            <a class="nav-link" id="nav-freedom-home" aria-selected="true" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="nav-freedom-login" aria-selected="false">Login</a>
+            <a class="nav-link" id="nav-freedom-login" aria-selected="false" href="#section-freedom-signup">Sign Up</a>
           </li>
         </ul>
       </div>
@@ -37,26 +37,101 @@
   </nav>
   <!-- Content -->
   <!-- Home Section -->
-  <div id="section-freedom-home" class="container">
+  <div id="section-freedom-home" class="container mt-2 mb-lg-5 p-5">
     <div class="row p-5">
       <div class="col-xl-8">
-        <div id="home-desc-container" class="container-fluid">
+        <div id="home-desc-container" class="container-fluid"> 
             <!-- Description and Links -->
-            <h3 id="home-slogan">
+            <h3 class="freedom-title" data-aos="fade-right">
               Take control of your transactions<br>Achieve financial <span style="color: var(--normal-red);">Freedom</span>
             </h3>
-            <img  id="freedom-card" class="img-fluid" src="./styles/imgs/lIB1ukt8-cardholder.gif" alt="Freedom Card">
-            <p style="font-size:15px ;">A conceptual demonstration of the anonymous nature of Freedom Card</p>
-            <p class="mt-5">
-              Receive payments, access your funds through e-wallets, and purchase cryptocurrency. All from your personal device and in a decentralized manner. 
-            </p>
-            <button id="home-button">
-              Returning User?
-            </button>
+            <img  id="freedom-card" class="img-fluid" src="./styles/imgs/freedom-card.gif" alt="Freedom Card" data-aos="fade-up">
+            <div id="home-information-tab" data-aos="fade-up">
+              <p>Receive payments, access your funds through e-wallets, and purchase cryptocurrency. All decentralized and on your personal device.</p>
+              <button>Returning User?</button>
+            </div>
         </div>
       </div>
       <div class="col-xl-4">
-        <img id="home-phone" class="img-fluid" src="./styles/imgs/freedom-phone.png" alt="Eagle Mobile App">
+        <img id="home-phone" class="img-fluid" src="./styles/imgs/freedom-phone.png" alt="Eagle Mobile App" data-aos="fade-left">
+      </div>
+    </div>
+  </div>
+  <!-- Sign Up Section -->
+  <div id="section-freedom-signup" class="container-fluid p-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <img  class="img-fluid" src="./styles/imgs/freedom-sam.png" alt="Uncle Sammy" data-aos="zoom-in">
+        </div>
+        <div id="signup-container" class="col-xl-8" data-aos="fade-left">
+          <h1 class="freedom-title">Register for a <span style="color: var(--navy);">Freedom Account</span></h1>
+          <!-- Sign Up Form -->
+          <form class="needs-validation" novalidate>
+            <!-- Name -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="freedomName" required>            
+              <label for="freedomName">Full Legal Name</label>
+              <div class="invalid-feedback">
+                Please enter your full legal name
+              </div>
+            </div>
+            <!-- SSN -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="freedomSSN" pattern="[0-9]{9}" aria-describedby="ssnHelp" required>
+              <label for="freedomName">SSN</label>
+              <div id="ssnHelp" class="form-text">Only visible by you (xxxxxxxxx)</div>
+              <div class="invalid-feedback">
+                Please enter a valid SSN
+              </div>
+            </div>
+            <!-- Address -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="freedomAddress" required>
+              <label for="freedomName">Address</label>
+              <div class="invalid-feedback">
+                Please enter a valid street address
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="freedomEmail" aria-describedby="emailHelp" required>
+              <label for="freedomEmail">Email address</label>
+              <div id="emailHelp" class="form-text">Used to recieve updates and verification</div>
+              <div class="invalid-feedback">
+                Please enter a valid email address
+              </div>
+            </div>
+            <!-- Mobile -->
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control" id="freedomMobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="mobileHelp" required>
+              <label for="freedomName">Mobile</label>
+              <div id="mobileHelp" class="form-text">Used to recieve updates and verification (xxx-xxx-xxxx)</div>
+              <div class="invalid-feedback">
+                Please enter a valid phone number
+              </div>
+            </div>
+            <!-- Password -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="freedomPassword" required>
+              <label for="freedomPassword">Password</label>
+              <div class="invalid-feedback">
+                Please enter password
+              </div>
+            </div>
+            <!-- Password Verify -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="freedomPasswordVerify" required>
+              <label for="freedomPassword">Verify Password</label>
+              <div class="invalid-feedback">
+                Please confirm password
+              </div>
+            </div>
+            <!-- Submission -->
+            <button type="submit" id="signup-button"><span>Register</span></button>
+            <p id="signup-confirmation" class="mt-3"></p>
+          </form>
+        </div>
       </div>
     </div>
   </div>

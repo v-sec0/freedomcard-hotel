@@ -5,94 +5,99 @@
 
 
 :root {
-    --background-red: #332C2B;
+    --black: #32353B;
     --bright-red: #ED3726;
-    --normal-red: #BA4D43;
+    --normal-red: #BA5743;
     --dark-red: #87514C;
-    --darkest-red: #544240
-
+    --navy: #304268;
 }
+
 
 /* Media Styling */
 @media only screen and (max-width: 580px) {
-    #freedom-eagle-logo {
-        max-width: 250px;
-    }
+    #freedom-eagle-logo {max-width: 250px;}
     
     #section-freedom-home {
         margin-top:0px !important;
         text-align: center;
+        padding: 0 !important;
     }
 
-    #home-phone {
-        margin-top: 20px;
-    }  
+    #home-phone {margin-top: 20px;}  
 
-    #freedom-card {
-        display: none;
-    }
+    #freedom-card {display: none;}
+
+    #signup-container {margin-top: 20px;}
 }
 
 
 /* Body Styling */
 body {
-    background-color: var(--background-red) ;
+    background-color: white ;
     font-family: 'Poly', serif;
+    color: var(--black);
+    .freedom-title {
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 30px;
+    
+    };
 }
+
 
 /* Navbar Styling */  
-#freedom-eagle-logo {
-    max-width: 300px;
-    max-height: auto;
-}
-
-#navbarUnderline a {
-    text-decoration: none;
-    color: var(--normal-red);
-}
-
 #nav-freedom-container {
     max-height: 155px;
+    #navbarUnderline a {
+        text-decoration: none;
+        color: var(--normal-red);
+    };
+    #freedom-eagle-logo {
+        max-width: 300px;
+        max-height: auto;
+    }
 }
     
+
 /* Home Section */
 #section-freedom-home {
     margin-top: 50px;
+    color: var(--black);
+}
+
+#home-information-tab {
+    background: var(--navy);
+    padding: 20px;
+    border-radius: 20px;
     color: white;
+    p {font-weight: 700;};
+    button {
+        border: 1px white solid; 
+        background-color: white; 
+        padding: 10px; 
+        border-radius: 15px; 
+        color: var(--navy); 
+        font-family: inherit;
+    };
+    button:hover {border-color: lightgrey; background-color: lightgrey;}
 }
 
-
-#home-desc-container p {
-    font-size: 120%;
-    color: lightgrey;
+#section-freedom-signup {
+    background-color: var(--dark-red);
+    #signup-container {
+        color: var(--black);
+        background-color: white;
+        border: 1px white solid;
+        border-radius: 10px;
+    };
+    #signup-button {
+        border: 1px var(--navy) solid; 
+        background-color: var(--navy); 
+        padding: 10px 20px; 
+        border-radius: 15px; 
+        color: white; 
+        font-family: inherit;
+    };
+    input {font-family: inherit;}
+    
 }
-
-#home-slogan {
-    font-weight: 900;
-    font-size: 40px;
-    margin-bottom: 30px;
-
-}
-
-#freedom-card {
-    border: 5px solid var(--dark-red);
-}
-
-#home-button {
-    border: 0px;
-    padding: 15px 50px;
-    border-radius: 30px;
-    margin-top: 10px;
-    font-family: inherit;
-    color: white;
-    background-color: var(--bright-red);
-}
-
-#home-button:hover {
-    background: white;
-    color: var(--bright-red);
-    transition: .5s;
-}
-
-
-
