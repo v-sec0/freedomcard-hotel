@@ -71,7 +71,7 @@ body {
     border-radius: 20px;
     color: white;
     p {font-weight: 700;};
-    button {
+    #home-btn {
         border: 1px white solid; 
         background-color: white; 
         padding: 10px; 
@@ -79,7 +79,7 @@ body {
         color: var(--navy); 
         font-family: inherit;
     };
-    button:hover {border-color: lightgrey; background-color: lightgrey;}
+    #home-btn:hover {border-color: lightgrey; background-color: lightgrey;}
 }
 
 #section-freedom-signup {
