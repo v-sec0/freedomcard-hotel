@@ -49,7 +49,42 @@
               <img  id="freedom-card" class="img-fluid" src="./styles/imgs/freedom-card.gif" alt="Freedom Card">
               <div id="home-information-tab">
                 <p>Receive payments, access your funds through e-wallets, and purchase cryptocurrency. All decentralized and on your personal device.</p>
-                <button id="home-btn">Returning User?</button>
+                <!-- Button trigger modal -->
+                <button type="button" id="home-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Returning User?
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-floating mb-3 col-md-9">
+                          <input type="text" class="form-control" id="freedomName" name="full_name" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
+                          <label for="freedomName">Full Legal Name</label>
+                          <div class="invalid-feedback">
+                            Please enter your full legal name
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3 col-md-9">
+                          <input type="text" class="form-control" id="freedomName" name="full_name" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
+                          <label for="freedomName">Full Legal Name</label>
+                          <div class="invalid-feedback">
+                            Please enter your full legal name
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
               </div>
             </div>
         </div>
@@ -78,6 +113,7 @@
                 Please enter your full legal name
               </div>
             </div>
+            <!-- Date -->
             <div class="form-floating mb-3 col-md-3">
               <input type="date" class="form-control" id="freedomDate" min="2023-01-01" max="2023-12-31" name="signup_date" required>            
               <label for="freedomDate">Date</label>
@@ -113,7 +149,7 @@
             </div>
             <!-- Mobile -->
             <div class="form-floating mb-3 col-md-4">
-              <input type="tel" class="form-control" id="freedomMobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="mobileHelp" name="mobile" required>
+              <input type="tel" class="form-control" id="freedomMobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="mobileHelp" required>
               <label for="freedomMobile">Mobile</label>
               <div id="mobileHelp" class="form-text">Used to recieve updates and verification (xxx-xxx-xxxx)</div>
               <div class="invalid-feedback">
@@ -130,7 +166,7 @@
               <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
                   Must be 8-20 characters long.
-                </span>
+                </span>`
               </div>
             
             </div>
@@ -167,7 +203,6 @@
     </div>
   </div>
   
-
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

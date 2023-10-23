@@ -1,26 +1,40 @@
 $(document).ready(function(){
     // Making sure the DOC is fully loaded
     console.log("Ready to rumble.");
-    console.log("Placeholder");
 
-    (() => {
-        'use strict'
-      
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-      
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-          form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-      
-            form.classList.add('was-validated')
-          }, false)
-        })
-      })();
+    
+    // Making a function to validate the forms
+    let validateForms = () => {
+      'use strict'
+    
+      // Validating registration
+      var containerForm = document.getElementById('registration-form');
+    
+      containerForm.addEventListener('submit', function (event) {
+        if (!containerForm.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          
+          // If form is valid, store information for later use.
+          let fullname = document.getElementById('freedomName').value;
+          let email = document.getElementById('freedomEmail').value;
+          // Was gonna use atob() but felt like it was unnessecary as the entire program is unsecure
+          let password = document.getElementById('freedomPassword').value;
+
+          sessionStorage.setItem('fullname', fullname);
+          sessionStorage.setItem('email', email);
+          sessionStorage.setItem('password', password);
+          
+        }
+    
+        containerForm.classList.add('was-validated');
+      }, false);
+    }
+    
+    // Initializing script
+    validateForms();
+    
     
 
 });
