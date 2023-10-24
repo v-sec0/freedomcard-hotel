@@ -66,7 +66,7 @@ $(document).ready(function(){
           // Log the values to the console
           console.log('Email:', $loginEmail.val(), 'Password:', $loginPassword.val());
           
-          // Checking is values are present in storage and going through some logic
+          // Looking for values and making sure they exist
           if (storedEmail && storedPassword) {
             if ($loginEmail.val() === storedEmail && $loginPassword.val() === storedPassword) {
               $loginEmail.addClass('is-valid');
@@ -74,7 +74,7 @@ $(document).ready(function(){
               $confirmation.text(`Welcome back ${storedName}, you will be logged in shortly.`)
               setTimeout(function() {
                 window.location.reload();
-              }, 10000);  // 10000 milliseconds = 10 seconds
+              }, 10000);
             
             } else {
               // If email is invalid
@@ -107,7 +107,7 @@ $(document).ready(function(){
         }
     });
 
-    // Remove 'is-invalid' class when user starts typing
+    // Remove 'is-invalid' cdynamically
     $loginPassword.on('input', function() {
         $loginPassword.removeClass('is-invalid');
     });
