@@ -63,24 +63,27 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <div class="form-floating mb-3 col-md-9">
-                          <input type="text" class="form-control" id="loginEmail" required>            
-                          <label for="loginEmail">Email</label>
-                          <div id="feedbackEmail" class="invalid-feedback">
-                            Please enter a valid email
+                        <form id="login-form" novalidate>
+                          <div class="form-floating mb-3 col-md-9">
+                            <input type="email" class="form-control" id="loginEmail" required>            
+                            <label for="loginEmail">Email</label>
+                            <div id="feedbackEmail" class="invalid-feedback">
+                              Please enter a valid email
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-floating mb-3 col-md-9">
-                          <input type="text" class="form-control" id="loginPassword" required>            
-                          <label for="loginPassword">Password</label>
-                          <div id="feedbackPassword" class="invalid-feedback">
-                            Please enter a valid password
+                          <div class="form-floating mb-3 col-md-9">
+                            <input type="password" class="form-control" id="loginPassword" required>            
+                            <label for="loginPassword">Password</label>
+                            <div id="feedbackPassword" class="invalid-feedback">
+                              Please enter a valid password
+                            </div>
                           </div>
-                        </div>
+                          <p id="confirmationMessage"></p>
+                        </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" id="close-button" data-bs-dismiss="modal">Close</button>
-                        <button type="button" id="save-button">Save changes</button>
+                        <button type="submit" id="save-button" form="login-form">Save changes</button>
                       </div>
                     </div>
                   </div>

@@ -98,6 +98,9 @@ body {
         color: white; 
         font-family: inherit;
     }
+    #confirmationMessage {
+        color: #1DE078;
+    }
 }
 
 #section-freedom-signup {
