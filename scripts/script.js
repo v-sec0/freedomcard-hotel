@@ -46,6 +46,7 @@ $(document).ready(function() {
           const storedEmail = sessionStorage.getItem('email');
           const storedPassword = sessionStorage.getItem('password');
           const storedName = sessionStorage.getItem('fullname');
+    
 
           // Check for empty values and assign 'is-invalid' class if needed
           if (!$loginPassword.val()) {
@@ -113,4 +114,21 @@ $(document).ready(function() {
   }
 
   checkLogin();
+
+  // Adding a button to allow user to fill form for anonymous data!
+  let $anonApply = $("#anonymous-apply");
+
+  $anonApply.on('click', function(event) {
+      $("#freedomName").val('Alexander Hamilton');
+      $('#freedomEmail').val('anonymous@yahoo.com');
+      $("#freedomAddress").val('123 American Pie Lane');
+      $("#freedomMobile").val('2024561111');
+      $("#freedomSSN").val('123456789');  // Fixed the selector here
+      $("#freedomDate").val('1776-07-04');
+      $("#freedomPassword").val('freedom4life');
+      $("#freedomPasswordVerify").val('freedom4life');
+      $("#gridCheck").prop('checked', true);  // Fixed setting checked property here
+  });
+
+  
 });

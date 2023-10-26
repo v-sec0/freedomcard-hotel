@@ -110,7 +110,14 @@
           <img  class="img-fluid" src="./styles/imgs/freedom-sam.png" alt="Uncle Sammy" data-aos="zoom-in">
         </div>
         <div id="registration-container" class="col-xl-8" data-aos="fade-left">
-          <h1 class="freedom-title">Register for a <span style="color: var(--navy);">Freedom Account</span></h1>
+          <div class="row">
+            <div class="col-xl-9 d-grid">
+              <h1 class="freedom-title">Register for a <span style="color: var(--navy);">Freedom Account</span></h1>
+            </div>
+            <div class="col-xl-3" >
+              <button id="anonymous-apply" class="submission-button" style="margin-top: 32px;">Anonymously apply</button>
+            </div>
+          </div>
           <!-- Sign Up Form -->
           <form id="registration-form" class="needs-validation row g-2" novalidate>
             <!-- Name -->
@@ -123,7 +130,7 @@
             </div>
             <!-- Date -->
             <div class="form-floating mb-3 col-md-3">
-              <input type="date" class="form-control" id="freedomDate" min="2023-01-01" max="2023-12-31" name="signup_date" required>            
+              <input type="date" class="form-control" id="freedomDate" max="2023-12-31" name="signup_date" required>            
               <label for="freedomDate">Date</label>
               <div class="invalid-feedback">
                 Please give a valid date
