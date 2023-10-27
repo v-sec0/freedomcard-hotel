@@ -1,6 +1,51 @@
 $(document).ready(function() {
   // Making sure the DOC is fully loaded
   console.log("Ready to rumble.");
+  console.log(sessionStorage.getItem('hasRegistered'));
+
+  // Checking to see if user is a memeber or not
+  let validateResult = sessionStorage.getItem('hasRegistered');
+
+  // Remove the signup area and the signup option if an account is detected
+  if (validateResult === 'Phase 1') 
+  {
+    $("#section-freedom-signup").hide();
+    $('#nav-freedom-login').hide();
+    $('#nav-freedom-home').hide();
+    $("#home-btn").text("Login");
+  } else if (validateResult === 'Phase 2')  // If account is signed into change the site layout
+  {
+    $("#section-freedom-signup").hide();
+    $('#nav-freedom-home').hide();
+    $('#nav-freedom-login').hide();
+    $("#home-btn").text("View Account Information");
+    $("#home-btn").attr('data-bs-target', '#accountInfoModal');
+
+    // Adding additional functionality for logged in users
+    let fullPhoneNumber = sessionStorage.getItem('mobile');
+    let maskedPhoneNumber = fullPhoneNumber ? "xxx-xxx-" + fullPhoneNumber.slice(-4) : "xxx-xxx-xxxx";
+
+    let fullSSN = sessionStorage.getItem('ssn');
+    let maskedSSN = fullPhoneNumber ? "xxx-xx-" + fullSSN.slice(-4) : "xxx-xx-xxxx";
+
+    // Displaying account info to user
+    let userInfoHtml = `
+        <h4>Welcome, ${sessionStorage.getItem('fullname')}!</h4>
+        <p>Email: ${sessionStorage.getItem('email')}</p>
+        <p>Member Since: ${sessionStorage.getItem('date')}</p>
+        <p>Phone Number: ${maskedPhoneNumber}</p>
+        <p>SSN: ${maskedSSN}</p>
+        <p>Current Address: ${sessionStorage.getItem('address')}</p>
+      `;
+    // Adding this to the info modal body
+    $("#accountInfoModal .modal-body").html(userInfoHtml);
+
+    //Adding a logout feature that clears sessionStorage
+    $("#logout-btn").on('click', function(event) {
+      sessionStorage.clear()
+      window.location.reload()
+    })
+  }
 
   // Making a function to validate the forms
   let validateForms = () => {
@@ -13,14 +58,24 @@ $(document).ready(function() {
               event.stopPropagation();
           } else {
               // If form is valid, store information for later use.
-              let fullname = $('#freedomName').val();
-              let email = $('#freedomEmail').val();
-              let password = $('#freedomPassword').val();
+              let $fullname = $('#freedomName').val();
+              let $email = $('#freedomEmail').val();
+              let $password = $('#freedomPassword').val();
+              let $ssn = $('#freedomSSN').val();
+              let $address = $('#freedomAddress').val();
+              let $mobile = $('#freedomMobile').val();
+              let $date = $('#freedomDate').val();
 
               // Storing name, email, and password into session
-              sessionStorage.setItem('fullname', fullname);
-              sessionStorage.setItem('email', email);
-              sessionStorage.setItem('password', password);
+              sessionStorage.setItem('fullname', $fullname);
+              sessionStorage.setItem('email', $email);
+              sessionStorage.setItem('password', $password);
+              sessionStorage.setItem('ssn', $ssn);
+              sessionStorage.setItem('address', $address);
+              sessionStorage.setItem('mobile', $mobile);
+              sessionStorage.setItem('date', $date);
+              sessionStorage.setItem('hasRegistered', 'Phase 1');
+
           }
 
           $containerForm.addClass('was-validated');
@@ -67,9 +122,10 @@ $(document).ready(function() {
                       $loginEmail.addClass('is-valid');
                       $loginPassword.addClass('is-valid');
                       $confirmation.text(`Welcome back ${storedName}, you will be logged in shortly.`);
+                      sessionStorage.setItem('hasRegistered', 'Phase 2')
                       setTimeout(function() {
                           window.location.reload();
-                      }, 10000);
+                      }, 5000);
                   } else {
                       // If email is invalid
                       if (storedEmail !== $loginEmail.val()) {

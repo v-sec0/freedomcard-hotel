@@ -84,27 +84,32 @@ body {
         font-family: inherit;
     };
     #home-btn:hover {border-color: lightgrey; background-color: lightgrey;};
-    #loginModalLabel {
+    #loginModalLabel{
         font-weight: 700;
         color: var(--navy);
     };
-    #save-button {border: 1px var(--navy) solid; 
+    #save-button  {border: 1px var(--navy) solid; 
         background-color: var(--navy); 
         padding: 10px 20px; 
         border-radius: 15px; 
         color: white; 
         font-family: inherit;};
-    #close-button {
+    #close-button, #logout-btn {
         border: 1px var(--normal-red) solid; 
         background-color: var(--normal-red); 
         padding: 10px 20px; 
         border-radius: 15px; 
         color: white; 
         font-family: inherit;
-    }
+    };
     #confirmationMessage {
         color: #1DE078;
+    };
+    #accountInfoModal {
+        color: var(--navy);
     }
+
+
 }
 
 #section-freedom-signup {

@@ -59,8 +59,9 @@
                   Returning User?
                 </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <!-- Modals -->
+                <!-- Login Modal -->
+                <div class="modal fade active-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -92,7 +93,24 @@
                       </div>
                     </div>
                   </div>
-                </div>                
+                </div> 
+                <!-- See Account Info Modal -->
+                <div class="modal fade" id="accountInfoModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="accountModalLabel">Account Information</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="logout-btn">Logout</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <!-- End of Modals -->
               </div>
             </div>
         </div>
@@ -122,7 +140,7 @@
           <form id="registration-form" class="needs-validation row g-2" novalidate>
             <!-- Name -->
             <div class="form-floating mb-3 col-md-9">
-              <input type="text" class="form-control" id="freedomName" name="full_name" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
+              <input type="text" class="form-control" id="freedomName" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
               <label for="freedomName">Full Legal Name</label>
               <div class="invalid-feedback">
                 Please enter your full legal name
@@ -130,7 +148,7 @@
             </div>
             <!-- Date -->
             <div class="form-floating mb-3 col-md-3">
-              <input type="date" class="form-control" id="freedomDate" max="2023-12-31" name="signup_date" required>            
+              <input type="date" class="form-control" id="freedomDate" max="2023-12-31" required>            
               <label for="freedomDate">Date</label>
               <div class="invalid-feedback">
                 Please give a valid date
@@ -155,7 +173,7 @@
             </div>
             <!-- Email -->
             <div class="form-floating mb-3 col-md-8">
-              <input type="email" class="form-control" id="freedomEmail" aria-describedby="emailHelp" name="email_address" required>
+              <input type="email" class="form-control" id="freedomEmail" aria-describedby="emailHelp" required>
               <label for="freedomEmail">Email address</label>
               <div id="emailHelp" class="form-text">Used to recieve updates and verification</div>
               <div class="invalid-feedback">
