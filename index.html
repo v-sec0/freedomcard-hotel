@@ -1,9 +1,8 @@
 <!-- 
   Site made by Levon Watkins
   Freedom Card is NOT real.
-  Don't really put information into this site.
+  Don't reallt put information into this site.
  -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm bg-white sticky-top" data-aos="fade-down" data-aos-once="true" style="overflow-y: hidden;">
     <div id="nav-freedom-container" class="container mb">
-      <div class="navbar-brand">
+      <div class="navbar-brand" href="">
         <img id="freedom-eagle-logo" src="./styles/imgs/freedom-eagle.png" alt="Freedom Eagle">
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUnderline" aria-controls="navbarUnderline" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +38,7 @@
             <a class="nav-link" id="nav-freedom-login" href="#section-freedom-signup">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fv-sec0.github.io%2Ffreedomcard-hotel%2F" class="nav-link">Validate</a>
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fv-sec0.github.io%2Ffreedomcard-hotel%2F" class="nav-link">Validator</a>
           </li>
           <li class="nav-item">
             <a href="https://github.com/v-sec0/freedomcard-hotel" class="nav-link">Source</a>
@@ -143,7 +142,13 @@
             <div class="col-xl-3" >
               <button id="anonymous-apply" class="submission-button" style="margin-top: 32px;">Anonymously apply</button>
             </div>
-          </div>"/label>
+          </div>
+          <!-- Sign Up Form -->
+          <form id="registration-form" class="needs-validation row g-2" novalidate>
+            <!-- Name -->
+            <div class="form-floating mb-3 col-md-9">
+              <input type="text" class="form-control" id="freedomName" pattern="\w+\s+\w+\s?\w+\s?\w+" required>            
+              <label for="freedomName">Full Legal Name</label>
               <div class="invalid-feedback">
                 Please enter your full legal name
               </div>
